@@ -1,0 +1,10 @@
+.login-page {
+  .card-login .form {
+    &.login {
+      min-height: 320px;
+    }
+    &.register {
+      min-height: 420px;
+    }
+  }
+}

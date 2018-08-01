@@ -29,6 +29,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'material_icons', '~> 2.2', '>= 2.2.1'
 
-# gem 'administrate', github: 'thoughtbot/administrate'
-# gem 'devise'
+gem 'administrate', github: 'thoughtbot/administrate'
+gem 'devise'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'

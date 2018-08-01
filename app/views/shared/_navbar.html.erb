@@ -27,12 +27,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="!#">
-              <i class="material-icons">person</i>
-              <p class="d-lg-none d-md-block">
-                Account
-              </p>
-            </a>
+            <%= button_to destroy_user_session_path, :class => "act-as-link nav-link", :method => :delete, :data => {position: "bottom", tooltip: "Logout"} do %>
+              <%= mi.assignment_ind %>
+            <% end %>
           </li>
           <!-- your navbar here -->
         </ul>

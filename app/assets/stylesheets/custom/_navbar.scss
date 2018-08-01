@@ -17,4 +17,20 @@
       display: none;
     }
   }
+  .button_to {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    .act-as-link {
+      cursor: pointer;
+      padding: 3px 15px !important;
+      background-color: transparent;
+      background-image: none;
+      border: 0 solid transparent;
+      .material-icons {
+        line-height: 20px;
+        margin-top: 3px !important;
+      }
+    }
+  }
 }

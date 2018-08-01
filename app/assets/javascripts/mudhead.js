@@ -1,3 +1,4 @@
+//= require perfect-scrollbar/dist/js/perfect-scrollbar.jquery
 //= require app/mud
 
 (function (global, factory) {

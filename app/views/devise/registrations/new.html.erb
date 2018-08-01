@@ -1,0 +1,50 @@
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :class => "form-horizontal form register" }) do |f| %>
+  
+  <%= f.error_notification %>
+
+  <div class="card-header card-header-primary text-center">
+    <h4 class="card-title">Registration</h4>
+  </div>
+  
+  <p class="description text-center">
+    Or <%= link_to "Login", new_user_session_path, :class => "text-accent font-weight-bold" %> with your account
+  </p>
+
+  <div class="card-body">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="material-icons">mail</i>
+        </span>
+      </div>
+      <%= f.input_field :email, :required => true, :autofocus => true, :autofill => false, :placeholder => "Email..." %>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="material-icons">face</i>
+        </span>
+      </div>
+      <%= f.input_field :username, :required => true, :placeholder => "Username..." %>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="material-icons">lock</i>
+        </span>
+      </div>
+      <%= f.input_field :password, :required => true, :placeholder => "Password..." %>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="material-icons">lock_outline</i>
+        </span>
+      </div>
+      <%= f.input_field :password_confirmation, :required => true, :placeholder => "Confirm password..." %>
+    </div>
+  </div>
+  <div class="footer text-center">
+    <%= f.button :submit, "Register", :class => "btn btn-primary btn-link btn-wd btn-lg" %>
+  </div>
+<% end %>
