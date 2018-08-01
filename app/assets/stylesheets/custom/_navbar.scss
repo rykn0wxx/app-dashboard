@@ -9,4 +9,12 @@
       padding-left: 80px;
     }
   }
+  @media (max-width: 991px) {
+    .navbar.fixed-top.fixed-top {
+      padding: 0.625rem 0 !important;
+    }
+    .sidebar-toggle {
+      display: none;
+    }
+  }
 }
