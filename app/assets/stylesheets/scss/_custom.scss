@@ -47,6 +47,8 @@ $theme-colors: map-merge((
 
 $bmd-label-color-focus:      $brand-accent;
 
+$link-hover-decoration:      none;
+
 $padding-small-vertical:     5px;
 $padding-zero:               0;
 
@@ -62,3 +64,4 @@ $font-family-serif:         $font-fam;
 
 $table-cell-padding:          0.5rem;
 $table-cell-padding-sm:       0.3rem;
+ 

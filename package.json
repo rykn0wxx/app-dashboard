@@ -1,5 +1,9 @@
 {
   "name": "app-dashboard",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-material-design": "^4.1.1",
+    "perfect-scrollbar": "0.6.13",
+    "popper.js": "^1.14.3"
+  }
 }

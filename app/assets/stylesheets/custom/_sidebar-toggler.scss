@@ -1,0 +1,22 @@
+.sidebar-toggle {
+  padding: 4px 0;
+  margin-right: 12px;
+  .toggler-icon {
+    position: relative;
+    width: 22px;
+    height: 2px;
+    outline: 0;
+    display: block;
+    border-radius: 0;
+    background: #495057;
+    transition: all 0.2s ease-in-out;
+    &+.toggler-icon {
+      margin-top: 4px;
+    }
+  }
+  &:hover {
+    .toggler-icon {
+      background: #212529;
+    }
+  }
+}
