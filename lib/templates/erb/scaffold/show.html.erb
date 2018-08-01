@@ -1,0 +1,24 @@
+<%% title "New", false %>
+<%% navbar_brand "New" %>
+
+<div class="row">
+  <div class="col-md-10 ml-auto mr-auto">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title"><%= singular_table_name.titleize %> #<%%= @<%= singular_table_name %>.id %></h4>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <% attributes.reject(&:password_digest?).each do |attribute| -%>
+            <dt class="col-sm-3"><%= attribute.human_name %></dt>
+            <dd class="col-sm-9"><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
+          <% end -%>
+        </dl>
+      </div>
+      <div class="card-footer">
+        <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => "btn-link" %>
+        <%%= link_to 'Back', <%= index_helper %>_path, :class => "btn-link" %>
+      </div>
+    </div>
+  </div>
+</div>
