@@ -1,0 +1,41 @@
+<%% title "Index", false %>
+<%% navbar_brand "Index" %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title"><%= plural_table_name.titleize %></h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-striped">
+            <thead class="thead-light">
+              <tr>
+                <%- attributes.reject(&:password_digest?).each do |attribute| -%>
+                  <th><%= attribute.human_name %></th>
+                <%- end -%>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+                <tr id="<%%= <%= singular_table_name %>.id %>">
+                  <%- attributes.reject(&:password_digest?).each do |attribute| -%>
+                    <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+                  <%- end -%>
+                  <td><%%= link_to  "View", <%= singular_table_name %> %></td>
+                  <td><%%= link_to  "Edit", edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+                  <td><%%= link_to  "Delete", <%= singular_table_name %>, :method => :delete, :data => { :confirm => "Are you sure?" } %></td>
+                </tr>
+              <%% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%%= link_to "New <%= singular_table_name.titleize %>", new_<%= singular_table_name %>_path, :class => "btn-link" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+//
+// Color System
+//
+$gray-base:       #050709;
+$gray-color:    #95a5a6;
+$body-bg:       #eaeaea;
+$body-color:      rgba(0,0,0,0.87);
+
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #ee5f5b;
+$orange:  #fd7e14;
+$yellow:  #f89406;
+$green:   #62c462;
+$teal:    #20c997;
+$cyan:    #5bc0de;
+
+$primary:              #3a3f44;
+$secondary:            #7A8288;
+$info:                 #5bc0de;
+$success:              #62c462;
+$warning:              #f89406;
+$danger:               #ee5f5b;
+$rose:                 #e83e8c;
+$dark:                 #272B30;
+$light:                #e9ecef;
+$inverse:                $light;
+$accent:               #673AB7;
+
+$brand-primary:              $primary;
+$brand-secondary:            $secondary;
+$brand-info:                 $info;
+$brand-success:              $success;
+$brand-warning:              $warning;
+$brand-danger:               $danger;
+$brand-rose:                 $rose;
+$brand-inverse:              $inverse;
+$brand-accent:               $accent;
+
+$theme-colors: ();
+
+$theme-colors: map-merge((
+  "accent":    $accent
+), $theme-colors);
+
+$bmd-label-color-focus:      $brand-accent;
+
+$padding-small-vertical:     5px;
+$padding-zero:               0;
+
+$theme-color-interval:      5%;
+
+$transition-ease-in:        ease-in-out;
+
+$margin-bottom:             0 0 10px 0;
+
+$font-fam:                  'Roboto', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+$font-family-sans-serif:    $font-fam;
+$font-family-serif:         $font-fam;
+
+$table-cell-padding:          0.5rem;
+$table-cell-padding-sm:       0.3rem;
