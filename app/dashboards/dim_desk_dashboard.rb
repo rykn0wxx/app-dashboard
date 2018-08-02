@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class DimRegionDashboard < ApplicationDashboard
+class DimDeskDashboard < ApplicationDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,7 +10,7 @@ class DimRegionDashboard < ApplicationDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    full_name: Field::String,
+    code: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     dim_groups: Field::HasMany
@@ -23,7 +23,7 @@ class DimRegionDashboard < ApplicationDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :name,
-    :full_name,
+    :code,
     :dim_groups
   ].freeze
 
@@ -36,13 +36,13 @@ class DimRegionDashboard < ApplicationDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :full_name,
+    :code,
   ].freeze
 
-  # Overwrite this method to customize how dim regions are displayed
+  # Overwrite this method to customize how dim desks are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(dim_region)
-    "#{dim_region.name}"
+  def display_resource(dim_desk)
+    "#{dim_desk.name}"
   end
 end

@@ -1,7 +1,11 @@
 <%= simple_form_for([namespace, page.resource], :html => { :class => "admin-form" }) do |f| %>
 
   <% page.attributes.each do |attribute| -%>
-    <%= f.input attribute.attribute %>
+    <% if attribute.html_class == "belongs-to" %>
+      <%= render_field attribute, f: f %>
+    <% else %>
+      <%= f.input attribute.attribute, :placeholder => attribute.html_class %>
+    <% end -%>
   <% end -%>
   <%= f.button :submit, :class => "btn btn-outline no-box-shadow border-0" %>
 <% end %>

@@ -8,8 +8,8 @@
       <div class="card-header card-header-primary d-flex flex-row justify-content-between align-items-center" role="banner">
         <h4 class="card-title"><%= content_for(:title) %></h4>
         <div>
-					<%= link_to "#", :id => "adminDropDownMenuLink", :role => "button", "aria-haspopup": true, "aria-expanded": false, :class => "nav-link text-accent dropdown-toggle", :data => { :toggle => "dropdown", :turbolinks => false } do %>
-						Dropdown link
+					<%= link_to "#", :id => "adminDropDownMenuLink", :role => "button", "aria-haspopup": true, "aria-expanded": false, :class => "nav-link text-light dropdown-toggle", :data => { :toggle => "dropdown", :turbolinks => false } do %>
+						Options
 					<% end %>
 					<div class="dropdown-menu" aria-labelledby="adminDropDownMenuLink">
 						<%= link_to(t("administrate.actions.new_resource", name: page.resource_name.titleize.downcase), [:new, namespace, page.resource_path], :class => "dropdown-item") if valid_action?(:new) && show_action?(:new, new_resource) %>

@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_184804) do
+ActiveRecord::Schema.define(version: 2018_08_02_042740) do
+
+  create_table "dim_desks", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dim_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.bigint "dim_desk_id"
+    t.bigint "dim_region_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dim_desk_id"], name: "index_dim_groups_on_dim_desk_id"
+    t.index ["dim_region_id"], name: "index_dim_groups_on_dim_region_id"
+  end
 
   create_table "dim_regions", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -34,4 +51,6 @@ ActiveRecord::Schema.define(version: 2018_08_01_184804) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "dim_groups", "dim_desks"
+  add_foreign_key "dim_groups", "dim_regions"
 end

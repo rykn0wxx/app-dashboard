@@ -11,4 +11,6 @@
 
 class DimRegion < ApplicationRecord
   validates :name, :full_name, presence: true
+
+  has_many :dim_groups
 end
