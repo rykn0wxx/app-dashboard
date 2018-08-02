@@ -1,0 +1,17 @@
+<div class="sidebar" role="navigation" data-color="purple" data-background-color="white">
+  <div class="logo">
+    <%= link_to  "Dashboard", root_path, :class => "simple-text logo-normal" %>
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
+        <li class="nav-item <%= nav_link_state(resource) %>">
+          <%= link_to [namespace, resource_index_route_key(resource)], :class => "nav-link navigation__link navigation__link--#{nav_link_state(resource)}" do %>
+            <i class="material-icons">data_usage</i>
+            <p><%= display_resource_name(resource) %></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

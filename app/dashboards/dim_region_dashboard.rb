@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class DimRegionDashboard < ApplicationDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,14 +9,8 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
-    username: Field::String,
-    encrypted_password: Field::String,
-    sign_in_count: Field::Number,
-    current_sign_in_at: Field::DateTime,
-    last_sign_in_at: Field::DateTime,
-    current_sign_in_ip: Field::String,
-    last_sign_in_ip: Field::String,
+    name: Field::String,
+    full_name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -27,46 +21,27 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
-    :email,
-    :username,
-    :encrypted_password,
+    :name,
+    :full_name,
+    :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :id,
-    :email,
-    :username,
-    :encrypted_password,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
-    :created_at,
-    :updated_at,
-  ].freeze
+  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys - READ_ONLY_ATTRIBUTES
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :email,
-    :username,
-    :encrypted_password,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
+    :name,
+    :full_name,
   ].freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how dim regions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(dim_region)
+    "#{dim_region.name}"
+  end
 end

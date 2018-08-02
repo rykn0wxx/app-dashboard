@@ -1,12 +1,10 @@
-<div class="sidebar">
+<div class="sidebar" data-color="purple" data-background-color="white">
   <div class="logo">
-    <a href="!#" class="simple-text logo-normal">
-      Creative Tim
-    </a>
+    <%= link_to  "Admin", admin_root_path, :class => "simple-text logo-normal" %>
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="./index.html">
           <i class="material-icons">dashboard</i>
           <p>Dashboard</p>

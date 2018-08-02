@@ -1,0 +1,22 @@
+<% content_for(:title) do %>
+  <%= t(
+    "administrate.actions.new_resource",
+    name: display_resource_name(page.resource_name).titleize
+  ) %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-8 ml-auto mr-auto col-sm-12">
+    <div class="card">
+      <div class="card-header card-header-primary d-flex flex-row justify-content-between align-items-center" role="banner">
+        <h4 class="card-title"><%= content_for(:title) %></h4>
+        <div>
+          <%= link_to t("administrate.actions.back"), :back, :class => "text-accent nav-link" %>
+        </div>
+      </div>
+      <div class="card-body main-content__body">
+        <%= render "form", page: page %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<% Administrate::Engine.stylesheets.each do |css_path| %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<%= yield :styles %>

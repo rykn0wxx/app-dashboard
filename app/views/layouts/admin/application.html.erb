@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" class="rykn0wxx">
+  <head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="author" content="rykn0wxx"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+		<title>
+			<%= content_for?(:title) ? yield(:title) + " | rykn0wxx" : "rykn0wxx" %>
+		</title>
+		<%= tag :meta, name: 'turbolinks-root', content: '/admin' %>
+		<%= tag :meta, name: 'turbolinks-cache-control', content: 'no-preview' %>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
+
+    <%= render "styles" %>
+  </head>
+
+  <body class="admin">
+
+    <div class="wrapper">
+      <%= render "sidenavs" %>
+      <div class="main-panel">
+        <div class="content">
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render  "scripts" %>
+  </body>
+</html>

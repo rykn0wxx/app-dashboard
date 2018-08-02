@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :users
-
-      root to: "users#index"
+      resources :dim_regions
+      root to: "dim_regions#index"
     end
   devise_for :users
   get 'landing' => 'page#landing', :as => 'landing'
